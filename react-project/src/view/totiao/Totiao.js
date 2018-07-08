@@ -1,10 +1,10 @@
 import React from 'react'
 
-class Totiao extends React.Component{
+class ToTiao extends React.Component{
     render(){
         return (<div>Totiao</div>)
     }
 }
 
-export default Totiao
+export default ToTiao
 

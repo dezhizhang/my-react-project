@@ -1,9 +1,9 @@
 import React from 'react'
 
-class Soyea extends React.Component{
+class SoYea extends React.Component{
     render(){
         return (<div>Soyea</div>)
     }
 }
 
-export default Soyea
+export default SoYea

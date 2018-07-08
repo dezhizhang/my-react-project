@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Guola extends React.Component{
+class GuoLa extends React.Component{
     render(){
         return (<div>
             Guola
@@ -8,7 +8,7 @@ class Guola extends React.Component{
     }
 }
 
-export default Guola
+export default GuoLa
 
 
 
