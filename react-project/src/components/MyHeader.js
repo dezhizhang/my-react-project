@@ -26,7 +26,8 @@ class MyHeader extends React.Component{
             visible:false,
             action:'login',
             userId:0,
-            userNickName:''
+            userNickName:'',
+            loginVisible:false
         }
     }
     handleOk=()=>{
@@ -37,13 +38,15 @@ class MyHeader extends React.Component{
     fnSubmit=(ev)=>{
 
        ev.preventDefault();
+       
+
     }
     handleCancle=()=>{
         this.setState({
             visible:false
         })
     }
-    fnShowModal=(e)=>{
+    fnRegister=(e)=>{
        if(e.key='register'){
            this.setState({currentKey:'register'});
            this.setState({visible:true})
@@ -51,11 +54,22 @@ class MyHeader extends React.Component{
             this.setState({currentKey:'e.key'});
             this.setState({visible:true});
        }
-
     }
+    fnLoginOk=()=>{
+        this.setState({loginVisible:false})
+    }
+    fnCancel=()=>{
+        this.setState({loginVisible:false});
+    }
+    fnLogin=(e)=>{
+        this.setState({loginVisible:true})
+    }
+
+
+
     
     render(){
-        //let {getFileProps}=this.props.form;
+        
         let userShow=this.state.hasLogined ? 
         <Menu.Item key='loginout'>
             <Button type='primary'>{this.state.userNickName}</Button>
@@ -64,8 +78,10 @@ class MyHeader extends React.Component{
             </Link>
             <Button type='ghost' htmlType='button'>退出登录</Button>
         </Menu.Item>
-        :<Menu.Item key='register' onClick={this.fnShowModal}>
-            <Icon type='appstore'/>注册/登录
+        :<Menu.Item key='register'  onClick={this.fnShowModal}>
+            <div>
+             <Icon  onClick={this.fnRegister} type='appstore'/>注册/<Icon type='appstore' onClick={this.fnLogin}/>登录
+            </div>
         </Menu.Item>
         
         return (<div>
@@ -117,15 +133,37 @@ class MyHeader extends React.Component{
                                <Tabs.TabPane tab='注册' key={2}>
                                    <Form horizontal onSubmit={this.fnSubmit}>
                                      <FormItem label='帐户'>
-                                       <Input placeholder='请输入你的帐号'/>
+                                       <Input placeholder='请输入你的帐号' />
                                      </FormItem>
                                      <FormItem label='密码'>
-                                       <Input type='password' placeholder='请输入你的密码' />
+                                       <Input type='password' placeholder='请输入你的密码'/>
                                      </FormItem>
                                      <FormItem label='确认密码'>
                                         <Input type='password' placeholder='请再次输入密码'/>
                                      </FormItem>
                                      <Button type='primary' htmlType='submit'>注册</Button>
+                                   </Form>
+                               </Tabs.TabPane>
+                           </Tabs>
+                       </Modal>
+                       <Modal 
+                       title='登录'
+                       visible={this.state.loginVisible}
+                       onOk={this.fnLoginOk}
+                       onCancel={this.fnCancel}
+                       okText='关闭'
+                       onCancelText='取消'
+                       >
+                        <Tabs type='card'>
+                               <Tabs.TabPane tab='登录' key={2}>
+                                   <Form horizontal onSubmit={this.fnSubmit}>
+                                     <FormItem label='帐户'>
+                                       <Input placeholder='请输入你的帐号' />
+                                     </FormItem>
+                                     <FormItem label='密码'>
+                                       <Input type='password' placeholder='请输入你的密码'/>
+                                     </FormItem>
+                                     <Button type='primary' htmlType='submit'>登录</Button>
                                    </Form>
                                </Tabs.TabPane>
                            </Tabs>
