@@ -1,5 +1,6 @@
 import React from 'react'
 import {Carousel,Row,Col} from 'antd';
+import List from './components/List'
 class SoYea extends React.Component{
 
     render(){
@@ -13,7 +14,7 @@ class SoYea extends React.Component{
         return (<div>
             <Row>
                 <Col span={2}></Col>
-                   <Col span={20}>
+                   <Col span={10}>
                     <Carousel dots={true}
                     style={{width:'500px'}}
                     autoplay={true} 
@@ -31,8 +32,11 @@ class SoYea extends React.Component{
                             <img style={{width:'500px',height:'300px',marginTop:'5px'}} src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4249085493,2771979155&fm=200&gp=0.jpg'/>
                         </div>
                     </Carousel>
+                   
                   </Col>
-                <Col span={2}></Col>
+                <Col span={9}>
+                  <List/>
+                </Col>
             </Row>
         </div>)
     }
