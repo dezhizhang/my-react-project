@@ -1,11 +1,12 @@
 import React from 'react'
 
-class IndexRouter extends React.Component{
+class GoXiao extends React.Component{
     render(){
         return (<div>
-
+            GoXiao
         </div>)
     }
 }
 
-export default IndexRouter
+export default GoXiao
+

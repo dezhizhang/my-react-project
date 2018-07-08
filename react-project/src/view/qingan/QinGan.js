@@ -1,11 +1,11 @@
 import React from 'react'
 
-class IndexRouter extends React.Component{
+class QinGan extends React.Component{
     render(){
         return (<div>
-
+          QinGan
         </div>)
     }
 }
 
-export default IndexRouter
+export default QinGan

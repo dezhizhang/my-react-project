@@ -95,28 +95,28 @@ class MyHeader extends React.Component{
                        <Col span={16}>
                          <Menu mode='horizontal'  selectedKeys={[this.state.currentKey]} theme='dark' style={{marginTop:'10px'}}>
                              <MenuItem key='soyea'>
-                                 <Icon type='desktop'/>首页
+                                 <Link to='/'><Icon type='desktop'/>首页</Link>
                              </MenuItem>
                              <MenuItem key='totiao'>
-                                 <Icon type='cloud'/>头条
+                                 <Link to='/totiao'><Icon type='cloud'/>头条</Link>
                              </MenuItem>
                              <MenuItem key='shihui'>
-                                 <Icon type='frown'/>社会
+                                <Link to='/shihui'> <Icon type='frown'/>社会</Link>
                              </MenuItem>
                              <MenuItem key='guola'>
-                                 <Icon type='appstore'/>国内
+                                <Link to='/guola'> <Icon type='appstore'/>国内</Link>
                              </MenuItem>
                              <MenuItem key='guowei'>
-                                 <Icon type='picture'/>国外
+                                 <Link to='/guowei'><Icon type='picture'/>国外</Link>
                              </MenuItem>
                              <MenuItem key='shisheng'>
-                                 <Icon type='heart'/>时尚
+                                 <Link to='/shisheng'><Icon type='heart'/>时尚</Link>
                              </MenuItem>
                              <MenuItem key='goxiao'>
-                                 <Icon type='bank'/>搞笑
+                                 <Link to='/goxiao'><Icon type='bank'/>搞笑</Link>
                              </MenuItem>
                              <MenuItem key='qingan'>
-                                 <Icon type='user-add'/>情感
+                                 <Link to='/qingan'><Icon type='user-add'/>情感</Link>
                              </MenuItem>
                              {userShow}
                          </Menu>

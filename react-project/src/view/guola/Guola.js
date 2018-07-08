@@ -1,11 +1,14 @@
 import React from 'react'
 
-class IndexRouter extends React.Component{
+class Guola extends React.Component{
     render(){
         return (<div>
-
+            Guola
         </div>)
     }
 }
 
-export default IndexRouter
+export default Guola
+
+
+
